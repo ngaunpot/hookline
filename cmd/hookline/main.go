@@ -3,20 +3,13 @@ package main
 import (
 	"log"
 	"net/http"
+
+	"github.com/ngaunpot/hookline/internal/api"
 )
 
 func main() {
-	mux := http.NewServeMux()
-
-	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("ok"))
-	})
-
-	mux.HandleFunc("POST /events", func(w http.ResponseWriter, r *http.Request) {
-		// Later: validate, store, and queue the event for delivery
-		w.WriteHeader(http.StatusAccepted)
-	})
+	srv := api.NewServer()
 
 	log.Println("listening on :8080")
-	log.Fatal(http.ListenAndServe(":8080", mux))
+	log.Fatal(http.ListenAndServe(":8080", srv))
 }
