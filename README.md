@@ -4,7 +4,7 @@ A webhook delivery service in Go. Your application hands it an event; it takes
 responsibility for that event actually reaching every subscriber - with retries,
 signed payloads and a full delivery log.
 
-[![CI](https://github.com/ngaunpot/hookline/actions/workflows/ci.yaml/badge.svg)](https://github.com/ngaunpot/hookline/actions/workflows/ci.yml)
+[![CI](https://github.com/ngaunpot/hookline/actions/workflows/ci.yaml/badge.svg)](https://github.com/ngaunpot/hookline/actions/workflows/ci.yaml)
 
 > **Status: in active development.** The HTTP ingestion layer works and is
 > tested. Persistence and the delivery worker are next - see the
