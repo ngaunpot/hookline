@@ -26,5 +26,6 @@ func (s *Server) routes() {
 
 func (s *Server) handleHealth(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain")
-	w.Write([]byte("ok"))
+	// Nothing useful to do if the client has already gone away.
+	_, _ = w.Write([]byte("ok"))
 }
